@@ -1,4 +1,4 @@
-# TakeHomeAssigmentAngular
+# Take home assigment in Angular
 
 This project was created using:
 - [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4
