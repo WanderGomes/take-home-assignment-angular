@@ -36,7 +36,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Doubts or Suggestions
 
 For questions or suggestions about the project, send me an email or send me a message on Whatsapp or on Telegram.
-- [wander.rg@gmail.com](mailto: wander.rg@gmail.com)
+- [wander.rg@gmail.com]
 - [whatsapp](https://wa.me/+5561993398992)
 - [telegram](https://t.me/wandergomes)
 
