@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import {ThemeService} from './services/theme.service';
 
 const COMPONENTS = [
 ];
@@ -21,10 +22,10 @@ const IMPORTS = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
 ];
 
 const SERVICES = [
+    ThemeService
 ];
 
 @NgModule({

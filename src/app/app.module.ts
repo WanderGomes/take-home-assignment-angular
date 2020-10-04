@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
 
 const MAIN_COMPONENTS = [
     AppComponent
@@ -14,7 +15,8 @@ const COMPONENTS = [
 
 const IMPORTS = [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
 ];
 
 @NgModule({

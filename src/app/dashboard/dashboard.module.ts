@@ -5,6 +5,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SimulationComponent } from './simulation/simulation.component';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 const COMPONENTS = [
     DashboardComponent,
@@ -23,7 +25,9 @@ const PIPES = [
 
 const IMPORTS = [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    SharedModule,
+    FormsModule
 ];
 
 const SERVICES = [

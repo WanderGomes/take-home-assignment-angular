@@ -1,15 +1,80 @@
 import { Component, OnInit } from '@angular/core';
+import { DollarPipe } from '../../shared/pipes/dollar.pipe';
 
 @Component({
-  selector: 'app-simulation',
-  templateUrl: './simulation.component.html',
-  styleUrls: ['./simulation.component.scss']
+    selector: 'app-simulation',
+    templateUrl: './simulation.component.html',
+    styleUrls: ['./simulation.component.scss']
 })
 export class SimulationComponent implements OnInit {
 
-  constructor() { }
+    totalAmount: string;
 
-  ngOnInit(): void {
-  }
+    monthlyAmount: string;
 
+    installments = 1;
+
+    currentDate = new Date();
+
+    goalDate: Date;
+
+    goalMonth: string;
+
+    goalYear: string;
+
+    private readonly EMPTY_VALUE: string = '0.00';
+
+    constructor(private dollarPipe: DollarPipe) { }
+
+    ngOnInit(): void {
+        this.initGoalDate();
+    }
+
+    formatCurrency(event): void {
+        this.totalAmount = this.transformToDollars(event.target.value);
+        if (!this.totalAmount || this.totalAmount === this.EMPTY_VALUE) {
+            this.totalAmount = undefined;
+            this.monthlyAmount = this.EMPTY_VALUE;
+        } else {
+            this.updateMonthlyAmount();
+        }
+    }
+
+    changeDate(date: Date): void {
+        this.installments = this.getMonthDiff(date);
+        this.updateMonthlyAmount();
+        this.updateGoalInfo(date);
+    }
+
+    addPlanning(): void {
+        // Form submit action
+    }
+
+    private initGoalDate(): void {
+        this.goalDate = new Date();
+        this.goalDate = new Date(this.goalDate.setMonth(this.goalDate.getMonth() + 1));
+
+        this.updateGoalInfo(this.goalDate);
+    }
+
+    private updateMonthlyAmount(): void {
+        if (this.totalAmount) {
+            const total = parseInt(this.totalAmount.replace(/\D/g, ''), 10);
+            const monthlyAmount =  total / this.installments;
+            this.monthlyAmount = this.transformToDollars(monthlyAmount);
+        }
+    }
+
+    private transformToDollars(value: string | number): string {
+        return this.dollarPipe.transform(value);
+    }
+
+    private getMonthDiff(dateTo: Date): number {
+        return dateTo.getMonth() - this.currentDate.getMonth() + (12 * (dateTo.getFullYear() - this.currentDate.getFullYear()));
+    }
+
+    private updateGoalInfo(dateTo: Date): void {
+        this.goalMonth = dateTo.toLocaleString('en-US', { month: 'long' });
+        this.goalYear = dateTo.getFullYear().toString();
+    }
 }

@@ -1,1 +1,78 @@
-<section class="tk-simulation"></section>
+<section class="tk-simulation">
+    <div class="tk-simulation__header tk-text-center">
+        <h1>Let's plan your <strong>saving goal</strong>.</h1>
+    </div>
+    <div class="tk-simulation__body">
+        <form role="form" class="tk-form" (submit)="addPlanning()">
+            <div class="tk-card">
+                <div class="tk-card__header">
+                    <div class="tk-row">
+                        <div class="tk-col">
+                            <i class="tk-icon tk-buy-house"></i>
+                        </div>
+                    </div>
+                    <div class="tk-row">
+                        <div class="tk-col">
+                            <h2>Buy a house</h2>
+                        </div>
+                    </div>
+                    <div class="tk-row">
+                        <div class="tk-col">
+                            <h3>Saving goal</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="tk-card__body">
+                    <div class="tk-row">
+                        <div class="tk-col">
+                            <div class="tk-form__group">
+                                <label for="total-amount">Total amount</label>
+                                <div class="tk-form__input-group">
+                                    <div class="tk-form__input-prepend">
+                                        $
+                                    </div>
+                                    <input type="text"
+                                           id="total-amount"
+                                           name="total-amount"
+                                           class="tk-form__input"
+                                           placeholder="0.00"
+                                           [(ngModel)]="totalAmount"
+                                           (keyup)="formatCurrency($event)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tk-col">
+                            <app-datepicker [label]="'Reach goal by'" [minDate]="goalDate"
+                                            (changeDate)="changeDate($event)"></app-datepicker>
+                        </div>
+                    </div>
+                    <div class="tk-row">
+                        <div class="tk-col">
+                            <div class="tk-simulation__result">
+                                <div class="tk-card tk-card--small tk-mt--28">
+                                    <div class="tk-card__body tk-flex tk-justify-content--space-between tk-align-items--center">
+                                        <span class="tk-simulation__result-label">Monthly <span class="tk-hide--xs">amount</span></span>
+                                        <span class="tk-simulation__result-value">
+                                            <span *ngIf="monthlyAmount">${{monthlyAmount}}</span>
+                                            <span *ngIf="!monthlyAmount">${{'0' | dollar}}</span>
+                                        </span>
+                                    </div>
+                                    <div class="tk-card__footer">
+                                        <span class="tk-simulation__result-text">
+                                            You're planning <strong>{{installments}} monthly deposits</strong> to reach your <strong *ngIf="totalAmount">${{totalAmount}}</strong> <strong *ngIf="!totalAmount">${{'0' | dollar}}</strong> goal by <strong>{{goalMonth}} {{goalYear}}</strong>.
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tk-card__footer tk-card__footer--transparent tk-flex tk-justify-content--center">
+                    <button type="submit" class="tk-button tk-button--rounded tk-button--blue" [disabled]="!totalAmount">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

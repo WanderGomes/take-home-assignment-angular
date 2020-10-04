@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardModule } from './dashboard.module';
+import { DashboardComponent } from './dashboard.component';
 import { SimulationComponent } from './simulation/simulation.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: DashboardModule,
-        redirectTo: '/simulation',
+        component: DashboardComponent,
         children: [
             {
                 path: 'simulation',

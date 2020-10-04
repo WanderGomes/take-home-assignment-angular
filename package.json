@@ -6,12 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~10.1.4",
+    "@angular/animations": "^10.1.4",
     "@angular/common": "~10.1.4",
     "@angular/compiler": "~10.1.4",
     "@angular/core": "~10.1.4",
@@ -20,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~10.1.4",
     "@angular/router": "~10.1.4",
     "rxjs": "~6.6.0",
+    "take-home-assignment-design-system": "^1.0.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

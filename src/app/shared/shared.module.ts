@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DatepickerComponent } from './datepicker/datepicker.component';
+import { DollarPipe } from './pipes/dollar.pipe';
 
 const COMPONENTS = [
     DatepickerComponent
@@ -14,6 +15,7 @@ const DIRECTIVES = [
 ];
 
 const PIPES = [
+    DollarPipe
 ];
 
 const IMPORTS = [
@@ -28,7 +30,7 @@ const SERVICES = [
         ...COMPONENTS,
         ...PARTIALS_COMPONENTS,
         ...DIRECTIVES,
-        ...PIPES,
+        ...PIPES
     ],
     imports: [
         ...IMPORTS
@@ -39,7 +41,8 @@ const SERVICES = [
         ...PIPES
     ],
     providers: [
-        ...SERVICES
+        ...SERVICES,
+        ...PIPES
     ],
     entryComponents: [
         ...PARTIALS_COMPONENTS
