@@ -1,8 +1,24 @@
 import { DollarPipe } from './dollar.pipe';
 
 describe('DollarPipe', () => {
-  it('create an instance', () => {
-    const pipe = new DollarPipe();
-    expect(pipe).toBeTruthy();
-  });
+
+    /**********************
+     * Check if the component was created
+     *********************/
+    it('should create the pipe', () => {
+        const pipe = new DollarPipe();
+        expect(pipe).toBeTruthy();
+    });
+
+    /**********************
+     * Check if the component was created
+     *********************/
+    it('should convert string to Dollar format', () => {
+        const pipe = new DollarPipe();
+        const number = 123456789;
+        const expectedString = '1,234,567.89';
+        const result = pipe.transform(number);
+
+        expect(result).toBe(expectedString);
+    });
 });

@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-datepicker',
@@ -11,14 +11,10 @@ export class DatepickerComponent implements OnInit {
     @ViewChild('leftArrow') leftArrowElement: ElementRef;
     @ViewChild('rightArrow') rightArrowElement: ElementRef;
 
-    @Input()
-    label: string;
+    @Input() label: string;
+    @Input() minDate: Date;
 
-    @Input()
-    minDate: Date;
-
-    @Output()
-    changeDate = new EventEmitter<Date>();
+    @Output() changeDate = new EventEmitter<Date>();
 
     selectedDate = new Date();
 
