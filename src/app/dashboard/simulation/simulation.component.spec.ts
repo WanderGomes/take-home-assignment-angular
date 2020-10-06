@@ -71,7 +71,7 @@ describe('SimulationComponent', () => {
 
                 const mockTotalAmountValue = {
                     target: {
-                        value: value
+                        value
                     }
                 };
 
@@ -108,7 +108,7 @@ describe('SimulationComponent', () => {
 
                 const mockTotalAmountValue = {
                     target: {
-                        value: value
+                        value
                     }
                 };
 
@@ -136,7 +136,7 @@ describe('SimulationComponent', () => {
 
                 const mockTotalAmountValue = {
                     target: {
-                        value: value
+                        value
                     }
                 };
 
@@ -166,7 +166,7 @@ describe('SimulationComponent', () => {
             fixture.whenStable().then(() => {
                 fixture.detectChanges();
 
-                let linkElement = fixture.debugElement.query(By.css('#tk-simulation__submit'));
+                const linkElement = fixture.debugElement.query(By.css('#tk-simulation__submit'));
                 linkElement.triggerEventHandler('click', null);
 
                 fixture.detectChanges();

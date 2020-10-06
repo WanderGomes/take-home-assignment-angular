@@ -92,7 +92,7 @@ describe('DatepickerComponent', () => {
 
         component.selectedDate = date;
 
-        component.changeDate.subscribe((date: Date) => goalDate = date);
+        component.changeDate.subscribe((d: Date) => goalDate = d);
         component.changeDate.emit(date);
 
         expect(date).toBe(goalDate);

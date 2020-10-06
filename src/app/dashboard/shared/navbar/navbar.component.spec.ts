@@ -14,7 +14,7 @@ describe('NavbarComponent', () => {
     function triggerChangeTheme(linkId: string): void {
         fixture.detectChanges();
 
-        let linkElement = fixture.debugElement.query(By.css(linkId));
+        const linkElement = fixture.debugElement.query(By.css(linkId));
         linkElement.triggerEventHandler('click', null);
 
         fixture.detectChanges();
