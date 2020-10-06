@@ -1,10 +1,10 @@
 <section class="tk-simulation">
-    <div class="tk-simulation__header tk-text-center">
+    <div class="tk-simulation__header tk-text--center tk-animation tk-animation--fade-in">
         <h1>Let's plan your <strong>saving goal</strong>.</h1>
     </div>
     <div class="tk-simulation__body">
         <form role="form" class="tk-form" (submit)="addPlanning()">
-            <div class="tk-card">
+            <div class="tk-card tk-animation tk-animation--fade-in">
                 <div class="tk-card__header">
                     <div class="tk-row">
                         <div class="tk-col">
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                         <div class="tk-col">
-                            <app-datepicker [label]="'Reach goal by'" [minDate]="goalDate"
+                            <app-datepicker [label]="'Reach goal by'" [minDate]="minGoalDate"
                                             (changeDate)="changeDate($event)"></app-datepicker>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
                 <div class="tk-card__footer tk-card__footer--transparent tk-flex tk-justify-content--center">
-                    <button type="submit" class="tk-button tk-button--rounded tk-button--blue" [disabled]="!totalAmount">
+                    <button type="submit" id="tk-simulation__submit" class="tk-button tk-button--rounded tk-button--blue" [disabled]="!totalAmount">
                         Confirm
                     </button>
                 </div>

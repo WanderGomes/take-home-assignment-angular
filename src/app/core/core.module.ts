@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import {ThemeService} from './services/theme.service';
+import { ThemeService } from './services/theme.service';
 
 const COMPONENTS = [
 ];

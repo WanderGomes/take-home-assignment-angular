@@ -16,6 +16,8 @@ export class SimulationComponent implements OnInit {
 
     currentDate = new Date();
 
+    minGoalDate: Date;
+
     goalDate: Date;
 
     goalMonth: string;
@@ -41,6 +43,7 @@ export class SimulationComponent implements OnInit {
     }
 
     changeDate(date: Date): void {
+        this.goalDate = date;
         this.installments = this.getMonthDiff(date);
         this.updateMonthlyAmount();
         this.updateGoalInfo(date);
@@ -51,10 +54,10 @@ export class SimulationComponent implements OnInit {
     }
 
     private initGoalDate(): void {
-        this.goalDate = new Date();
-        this.goalDate = new Date(this.goalDate.setMonth(this.goalDate.getMonth() + 1));
+        this.minGoalDate = new Date();
+        this.minGoalDate = new Date(this.minGoalDate.setMonth(this.minGoalDate.getMonth() + 1));
 
-        this.updateGoalInfo(this.goalDate);
+        this.updateGoalInfo(this.minGoalDate);
     }
 
     private updateMonthlyAmount(): void {
