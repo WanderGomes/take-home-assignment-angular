@@ -15,9 +15,9 @@ describe('DollarPipe', () => {
      *********************/
     it('should convert string to Dollar format', () => {
         const pipe = new DollarPipe();
-        const number = 123456789;
+        const value = 123456789;
         const expectedString = '1,234,567.89';
-        const result = pipe.transform(number);
+        const result = pipe.transform(value);
 
         expect(result).toBe(expectedString);
     });
