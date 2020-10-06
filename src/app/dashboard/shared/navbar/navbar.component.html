@@ -1,4 +1,4 @@
-<nav class="tk-nav">
+<nav class="tk-nav tk-animation tk-animation--fade-in">
     <div class="tk-nav__items">
         <div class="tk-nav__left-items">
             <div class="tk-nav__item tk-nav__item--fix-top">
@@ -9,12 +9,12 @@
         </div>
         <div class="tk-nav__right-items">
             <div class="tk-nav__item">
-                <a href="javascript:void(0)" class="tk-link tk-link--primary tk-link--small" (click)="changeToDarkMode()">
+                <a href="javascript:void(0)" id="tk-nav__dark-mode" class="tk-link tk-link--primary tk-link--small" [ngClass]="{'tk-link--active': currentTheme === 'DARK'}" (click)="changeToDarkMode()">
                     Dark mode
                 </a>
             </div>
             <div class="tk-nav__item">
-                <a href="javascript:void(0)" class="tk-link tk-link--primary tk-link--small" (click)="changeToLightMode()">
+                <a href="javascript:void(0)" id="tk-nav__light-mode" class="tk-link tk-link--primary tk-link--small" [ngClass]="{'tk-link--active': currentTheme === 'LIGHT'}" (click)="changeToLightMode()">
                     Light mode
                 </a>
             </div>

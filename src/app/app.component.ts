@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ThemeService} from './core/services/theme.service';
+import { Component, OnInit } from '@angular/core';
+import { ThemeService } from './core/services/theme.service';
 
 @Component({
     selector: 'app-root',
@@ -7,7 +7,6 @@ import {ThemeService} from './core/services/theme.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-    title = 'take-home-assigment-angular';
 
     constructor(private themeService: ThemeService) {
     }

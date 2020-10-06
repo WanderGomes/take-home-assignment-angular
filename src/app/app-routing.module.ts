@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [
-    {  path: '',
+export const appRoutes: Routes = [
+    {
+        path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full'
     },
@@ -12,11 +13,15 @@ const routes: Routes = [
             path: '',
             loadChildren: () => import('./dashboard/dashboard.module').then(module => module.DashboardModule)
         }]
+    },
+    {
+        path: '**',
+        redirectTo: 'dashboard'
     }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
