@@ -1,6 +1,6 @@
 <div class="tk-datepicker" (keydown)="handleKeyPress($event)">
-    <label for="date" *ngIf="label" (click)="focusInputDate()">{{label}}</label>
-    <div #inputDate id="date" class="tk-datepicker__input-group" tabindex="1">
+    <label for="tk-datepicker__input-group" *ngIf="label" (click)="focusInputDate()">{{label}}</label>
+    <div #inputDate id="tk-datepicker__input-group" class="tk-datepicker__input-group" tabindex="1">
         <button #leftArrow type="button" class="tk-datepicker__preview" (click)="previousMonth()">
             <i class="tk-icon tk-arrow-left"></i>
         </button>
