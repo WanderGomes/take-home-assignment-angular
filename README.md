@@ -10,6 +10,10 @@ This project was created using:
 - [Angular CLI](https://github.com/angular/angular-cli)
 - [Angular](https://angular.io/)
 
+## Project setup
+
+Run `npm install` to install all the dependencies.
+
 ## Development server
 
 Run `ng serve` or `npm start` for a dev server.
