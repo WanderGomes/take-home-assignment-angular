@@ -10,6 +10,22 @@
     "test": "ng test",
     "lint": "ng lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WanderGomes/take-home-assignment-angular.git"
+  },
+  "keywords": [
+    "Origin",
+    "Take Home",
+    "Assignment",
+    "Angular"
+  ],
+  "author": {
+    "name": "Wander Rocha Gomes",
+    "email": "wander.rg@gmail.com",
+    "url": "https://github.com/WanderGomes/take-home-assignment-angular.git"
+  },
+  "license": "ISC",
   "dependencies": {
     "@angular/animations": "^10.1.4",
     "@angular/common": "~10.1.4",
