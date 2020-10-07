@@ -1,6 +1,8 @@
 {
   "name": "take-home-assigment-angular",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Origin Frontend Challenge",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +10,6 @@
     "test": "ng test",
     "lint": "ng lint"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^10.1.4",
     "@angular/common": "~10.1.4",
