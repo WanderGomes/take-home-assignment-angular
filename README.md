@@ -1,4 +1,4 @@
-# TakeHomeAssigmentAngular
+# Take Home Assignment Angular
 
 This project was created using:
 - [Angular](https://angular.io/) version 10.1.4
@@ -37,7 +37,7 @@ Run `ng test` or `npm run test` to execute the unit tests via [Karma](https://ka
 ## Doubts or Suggestions
 
 For questions or suggestions about the project, send me an email or send me a message on Whatsapp or on Telegram.
-- [wander.rg@gmail.com]
+- wander.rg@gmail.com
 - [whatsapp](https://wa.me/+5561993398992)
 - [telegram](https://t.me/wandergomes)
 
