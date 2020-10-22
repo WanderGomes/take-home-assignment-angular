@@ -1,0 +1,135 @@
+.tk-saving-goals {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        margin-top: calc(var(--tk-default-space) * 7);
+
+        h1 {
+            margin: 0;
+        }
+    }
+
+    &__body {
+        margin-top: var(--tk-space-4x);
+    }
+
+    &__card-title {
+        margin-top: var(--tk-default-space);
+        font-weight: 600;
+        font-size: var(--tk-font-size-16);
+        text-align: center;
+
+        & + .tk-saving-goals__card-action {
+            margin-top: calc(var(--tk-space-4x) - var(--tk-half-space));
+        }
+
+        & + .tk-saving-goals__card-info {
+            margin-top: var(--tk-half-space);
+        }
+    }
+
+    .tk-card {
+        max-width: 272px;
+        height: 208px;
+        margin-bottom: 24px;
+
+        &__body {
+            text-align: center;
+            padding: 32px 12px;
+        }
+    }
+
+    &__card-icon {
+
+        i {
+            font-size: 3.2rem;
+            padding-top: calc(var(--tk-space-2x) - 5px);
+            padding-bottom: calc(var(--tk-space-2x) - 5px);
+            color: var(--tk-gray);
+        }
+    }
+
+    &__card-value {
+        color: var(--tk-primary-dark);
+        font-weight: 600;
+        font-size: 2.4rem;
+        word-break: break-word;
+    }
+
+    &__card-goal-label {
+        font-weight: 300;
+        font-size: 1rem;
+        margin-top: var(--tk-default-space);
+    }
+
+    &__card-action {
+
+        button {
+            height: 40px !important;
+        }
+    }
+}
+
+@media (max-width: 680px) {
+
+    .tk-saving-goals {
+
+        &__header {
+            margin-top: 26px;
+
+            h1 {
+                font-size: 2.4rem;
+            }
+        }
+
+        &__body {
+            margin-top: 26px;
+        }
+
+        .tk-card {
+            height: 176px;
+            max-width: 152px;
+        }
+
+        .tk-row {
+            flex-direction: row;
+        }
+
+        &__card-icon {
+
+            i {
+                font-size: 2.4rem;
+            }
+        }
+
+        &__card-value {
+            font-size: 2.4rem;
+        }
+
+        &__card-goal-label {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (min-width: 680px) and (max-width: 991px) {
+    .tk-card {
+        max-width: 272px;
+        height: 208px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .tk-card {
+        max-width: 272px;
+        height: 208px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .tk-card {
+        max-width: 272px;
+        height: 208px;
+    }
+}

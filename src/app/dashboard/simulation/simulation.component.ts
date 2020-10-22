@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { DollarPipe } from '../../shared/pipes/dollar.pipe';
+import {ActivatedRoute, Router} from "@angular/router";
+import {Subscription} from "rxjs";
+import {SavingGoal} from "../shared/models/saving-goal";
+import {SavingGoalsService} from "../shared/services/saving-goals.service";
 
 @Component({
     selector: 'app-simulation',
     templateUrl: './simulation.component.html',
     styleUrls: ['./simulation.component.scss']
 })
-export class SimulationComponent implements OnInit {
+export class SimulationComponent implements OnInit, OnDestroy {
 
     totalAmount: string;
 
@@ -24,12 +28,32 @@ export class SimulationComponent implements OnInit {
 
     goalYear: string;
 
+    paramsSubscription: Subscription;
+
+    savingGoalUuid: string;
+
+    savingGoal: SavingGoal;
+
     private readonly EMPTY_VALUE: string = '0.00';
 
-    constructor(private dollarPipe: DollarPipe) { }
+    constructor(private dollarPipe: DollarPipe,
+                private router: Router,
+                private route: ActivatedRoute,
+                private savingGoalsService: SavingGoalsService) {
+    }
 
     ngOnInit(): void {
         this.initGoalDate();
+
+        this.registerListeners();
+    }
+
+    private registerListeners(): void {
+        this.paramsSubscription = this.route.params.subscribe(param => {
+            this.savingGoalUuid = param.uuid;
+            // TODO: RECUPERAR
+            this.savingGoal = this.savingGoalsService.getSavingGoalByUuid(this.savingGoalUuid);
+        });
     }
 
     formatCurrency(event): void {
@@ -50,7 +74,26 @@ export class SimulationComponent implements OnInit {
     }
 
     addPlanning(): void {
-        // Form submit action
+        this.savingGoal.monthlyValue = this.monthlyAmount;
+        this.savingGoal.goalMonth = this.goalMonth;
+        this.savingGoal.goalYear = this.goalYear;
+
+        // TODO: SALVAR
+        this.savingGoalsService.updateSavingGoal(this.savingGoal);
+
+        this.router.navigate(['/dashboard/saving-goals']);
+    }
+
+    isDisabled(): boolean {
+        let retorno: boolean = false;
+
+        if (!this.totalAmount) {
+            retorno = true;
+        } else {
+            retorno = !!this.totalAmount.match(".*[a-z].*");
+        }
+
+        return retorno
     }
 
     private initGoalDate(): void {
@@ -79,5 +122,11 @@ export class SimulationComponent implements OnInit {
     private updateGoalInfo(dateTo: Date): void {
         this.goalMonth = dateTo.toLocaleString('en-US', { month: 'long' });
         this.goalYear = dateTo.getFullYear().toString();
+    }
+
+    ngOnDestroy(): void {
+        if (this.paramsSubscription) {
+            this.paramsSubscription.unsubscribe();
+        }
     }
 }

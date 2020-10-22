@@ -88,6 +88,7 @@
         font-weight: 500;
         font-size: var(--tk-font-size-40);
         color: var(--tk-text-accent-color);
+        word-break: break-word;
     }
 
     &__result-text {
