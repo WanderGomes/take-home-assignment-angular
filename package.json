@@ -35,9 +35,8 @@
     "@angular/platform-browser": "~10.1.4",
     "@angular/platform-browser-dynamic": "~10.1.4",
     "@angular/router": "~10.1.4",
-    "ngx-mask": "^10.0.4",
     "rxjs": "~6.6.0",
-    "take-home-assignment-design-system": "^1.1.1",
+    "take-home-assignment-design-system": "^1.1.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
