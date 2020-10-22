@@ -1,0 +1,39 @@
+<div class="tk-saving-goals">
+    <div class="tk-container">
+        <div class="tk-saving-goals__header">
+            <h1>Here's your saving goals</h1>
+        </div>
+        <div class="tk-saving-goals__body">
+            <div class="tk-row">
+                <div class="tk-col-3" *ngFor="let saving of savingGoals;">
+                    <div class="tk-card tk-animation tk-animation--fade-in">
+                        <div class="tk-card__body">
+                            <div class="tk-saving-goals__card-icon">
+                                <i class="{{saving.icon}}"></i>
+                            </div>
+                            <div class="tk-saving-goals__card-title">
+                                {{saving.title}}
+                            </div>
+                            <div class="tk-saving-goals__card-info" *ngIf="saving.monthlyValue">
+                                <div class="tk-saving-goals__card-value">
+                                    ${{saving.monthlyValue}}
+                                </div>
+                                <div class="tk-saving-goals__card-goal-date">
+                                    <div class="tk-saving-goals__card-goal-label">
+                                        reach your goal by
+                                    </div>
+                                    <div class="tk-saving-goals__card-goal-info">
+                                        {{saving.goalMonth}} {{saving.goalYear}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tk-saving-goals__card-action" *ngIf="!saving.monthlyValue">
+                                <button class="tk-button tk-button--blue tk-button--rounded tk-button--capitalize" (click)="openSimulation(saving)">Start setup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

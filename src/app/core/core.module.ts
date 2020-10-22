@@ -21,7 +21,7 @@ const IMPORTS = [
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
+    FormsModule
 ];
 
 const SERVICES = [

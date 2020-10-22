@@ -4,3 +4,62 @@
 
 // Design System
 @import "../node_modules/take-home-assignment-design-system/dist/design-system/design-system.css";
+
+
+// TODO: MOVER PARA O PROJETO DO DESIGN SYSTEM
+
+.tk-container {
+    width: 1135px;
+    margin: 0 auto;
+}
+
+.tk-button {
+
+    &--capitalize {
+        text-transform: capitalize;
+    }
+}
+
+.tk-col-3 {
+    padding-left: var(--tk-default-space);
+    padding-right: var(--tk-default-space);
+    flex: 0 0 25%;
+}
+
+@media (max-width: 680px) {
+    .tk-container {
+        width: calc(100% - var(--tk-space-3x));
+    }
+
+    .tk-col-3 {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 680px) and (max-width: 991px) {
+    .tk-container {
+        width: 90%;
+    }
+
+    .tk-col-3 {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .tk-container {
+        width: 90%;
+    }
+
+    .tk-col-3 {
+        flex: 0 0 33.3%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .tk-container {
+        width: 80%;
+    }
+}
+
+// FIM TODO
