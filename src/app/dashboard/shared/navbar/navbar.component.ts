@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     constructor(private themeService: ThemeService) { }
 
     ngOnInit(): void {
-        this.registerListerners();
+        this.registerListeners();
     }
 
     changeToDarkMode(): void {
@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.themeService.changeColorSchemePref(false);
     }
 
-    private registerListerners(): void {
+    private registerListeners(): void {
         this.themeSubscription = this.themeService.getCurrentTheme().subscribe((theme: ThemeEnum) => {
             if (theme) {
                 this.currentTheme = theme;

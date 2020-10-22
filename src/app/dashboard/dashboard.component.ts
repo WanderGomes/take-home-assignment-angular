@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {SavingGoalsService} from "./shared/services/saving-goals.service";
 
 @Component({
     selector: 'app-dashboard',
@@ -8,13 +9,15 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-    constructor(private router: Router) { }
+    constructor(private router: Router,
+                private savingGoalsServices: SavingGoalsService) { }
 
     ngOnInit(): void {
-        this.openSimulation();
+        // this.openSimulation();
+        this.savingGoalsServices.init();
     }
 
     openSimulation(): void {
-        this.router.navigate(['/dashboard/simulation']);
+        this.router.navigate(['/dashboard/saving-goals']);
     }
 }

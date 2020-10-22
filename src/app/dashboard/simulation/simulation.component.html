@@ -3,17 +3,17 @@
         <h1>Let's plan your <strong>saving goal</strong>.</h1>
     </div>
     <div class="tk-simulation__body">
-        <form role="form" class="tk-form" (submit)="addPlanning()">
+        <form role="form" class="tk-form" (submit)="addPlanning()" *ngIf="savingGoal">
             <div class="tk-card tk-animation tk-animation--fade-in">
                 <div class="tk-card__header">
                     <div class="tk-row">
                         <div class="tk-col">
-                            <i class="tk-icon tk-buy-house"></i>
+                            <i class="{{savingGoal.icon}}"></i>
                         </div>
                     </div>
                     <div class="tk-row">
                         <div class="tk-col">
-                            <h2>Buy a house</h2>
+                            <h2>{{savingGoal.title}}</h2>
                         </div>
                     </div>
                     <div class="tk-row">
@@ -36,6 +36,7 @@
                                            name="total-amount"
                                            class="tk-form__input"
                                            placeholder="0.00"
+                                           maxlength="22"
                                            [(ngModel)]="totalAmount"
                                            (keyup)="formatCurrency($event)">
                                 </div>
@@ -68,7 +69,7 @@
                     </div>
                 </div>
                 <div class="tk-card__footer tk-card__footer--transparent tk-flex tk-justify-content--center">
-                    <button type="submit" id="tk-simulation__submit" class="tk-button tk-button--rounded tk-button--blue" [disabled]="!totalAmount">
+                    <button type="submit" id="tk-simulation__submit" class="tk-button tk-button--rounded tk-button--blue" [disabled]="isDisabled()">
                         Confirm
                     </button>
                 </div>
